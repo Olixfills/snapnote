@@ -1,0 +1,61 @@
+{
+  "name": "snapnote",
+  "version": "0.1.0",
+  "description": "Screenshot annotate + note tool",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:mac": "electron-builder --mac --x64 --arm64",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^44.4.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.snapnote.app",
+    "productName": "SnapNote",
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "download"
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "identity": null,
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ]
+    },
+    "artifactName": "${productName}-${version}-${arch}.${ext}"
+  }
+}

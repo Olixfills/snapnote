@@ -1,0 +1,7 @@
+node_modules/
+*.log
+.DS_Store
+download/mac/
+download/mac-arm64/
+download/builder-debug.yml
+download/*.blockmap

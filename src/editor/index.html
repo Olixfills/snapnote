@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="editor.css" />
+</head>
+<body>
+  <div id="toolbar">
+    <div class="tool-group">
+      <button class="tool active" data-tool="note" title="Add numbered note">
+        <span class="dot">1</span> Note
+      </button>
+      <button class="tool" data-tool="highlight" title="Highlight an area">
+        <span class="swatch"></span> Highlight
+      </button>
+    </div>
+    <div class="tool-group">
+      <button id="undoBtn" title="Undo last annotation">Undo</button>
+      <button id="clearBtn" title="Remove all annotations">Clear</button>
+    </div>
+  </div>
+
+  <div id="stage">
+    <div id="imageWrap">
+      <img id="shot" draggable="false" />
+      <div id="annLayer"></div>
+      <div id="dragBox"></div>
+    </div>
+  </div>
+
+  <div id="notePopup" class="hidden">
+    <textarea id="noteText" placeholder="Write a note..." maxlength="400"></textarea>
+    <div class="popup-actions">
+      <button id="noteDelete" class="ghost">Delete</button>
+      <button id="noteSave" class="primary">Save</button>
+    </div>
+  </div>
+
+  <div id="bottomBar">
+    <button id="cancelBtn" class="ghost-lg">Cancel</button>
+    <button id="copyCloseBtn" class="primary-lg">Copy &amp; Close</button>
+  </div>
+
+  <script src="editor.js"></script>
+</body>
+</html>
