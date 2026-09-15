@@ -4,7 +4,7 @@ Screenshot annotate + note tool for macOS. Press ⌘⇧1, drag to select a regio
 
 ## Download
 
-Grab the build for your Mac from [`download/`](download):
+Grab the build for your Mac from the [Releases page](https://github.com/Olixfills/snapnote/releases/latest):
 
 - **Apple Silicon (M1/M2/M3/M4):** `SnapNote-0.1.0-arm64.dmg`
 - **Intel:** `SnapNote-0.1.0-x64.dmg`

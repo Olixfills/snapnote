@@ -5,3 +5,5 @@ download/mac/
 download/mac-arm64/
 download/builder-debug.yml
 download/*.blockmap
+download/*.dmg
+download/*.zip
