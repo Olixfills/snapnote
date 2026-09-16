@@ -26,6 +26,7 @@
     "directories": {
       "output": "download"
     },
+    "afterPack": "scripts/afterPack.js",
     "mac": {
       "category": "public.app-category.productivity",
       "identity": null,
