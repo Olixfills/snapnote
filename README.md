@@ -13,17 +13,18 @@ Grab the build for your Mac from the [Releases page](https://github.com/Olixfill
 
 ### First launch (unsigned build)
 
-This build isn't signed with an Apple Developer certificate, so macOS Gatekeeper will block it on first open with a "can't be opened because it is from an unidentified developer" message. To run it anyway:
+This build isn't signed with a paid Apple Developer ID or notarized, so Gatekeeper blocks it on first open. On current macOS, the dialog you'll see (**"SnapNote" Not Opened** / "Apple could not verify...") only offers **Move to Trash** or **Done** — there's no inline Open button, and it typically won't offer an "Open Anyway" override in System Settings either for a build like this. Right-click → Open does **not** bypass this.
 
-1. Open the `.dmg` and drag **SnapNote** into `/Applications`.
-2. Right-click (or Control-click) **SnapNote** in Applications and choose **Open**, then confirm **Open** in the dialog that appears.
-3. After that first approval, it launches normally (double-click, or via the ⌘⇧1 hotkey once running).
+The reliable fix is to clear the quarantine flag macOS attaches to anything downloaded from a browser, **before** you launch it the first time:
 
-If macOS still refuses, run this once in Terminal and try again:
+1. Open the `.dmg` and drag **SnapNote** into `/Applications` (or unzip the `.zip` there).
+2. Open Terminal and run:
+   ```bash
+   xattr -cr /Applications/SnapNote.app
+   ```
+3. Now double-click **SnapNote** as normal — it launches with no Gatekeeper prompt at all.
 
-```bash
-xattr -cr /Applications/SnapNote.app
-```
+This is safe: `xattr -cr` only strips the "downloaded from the internet" marker from this one file, it doesn't change any system security settings. You only need to do it once per install.
 
 ## Usage
 
